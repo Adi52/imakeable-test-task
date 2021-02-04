@@ -2,7 +2,6 @@ import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {FontAwesome5, Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from "../screens/Home/HomeScreen";
@@ -10,6 +9,8 @@ import BallScreen from "../screens/Ball/BallScreen";
 import ChatScreen from "../screens/Chat/ChatScreen";
 import GameScreen from "../screens/Game/GameScreen";
 import ProfileScreen from "../screens/Profile/ProfileScreen";
+import MatchResultsScreen, {screenOptions as MatchResultsScreenOptions} from "../screens/MatchResultsScreen/MatchResultsScreen";
+
 
 import theme from "../constants/theme";
 
@@ -78,6 +79,11 @@ export const ProfileNavigator = () => {
                 name={'Profile'}
                 component={ProfileScreen}
                 // options={}
+            />
+            <ProfileStackNavigator.Screen
+                name={'MatchResults'}
+                component={MatchResultsScreen}
+                options={MatchResultsScreenOptions}
             />
         </ProfileStackNavigator.Navigator>
     )

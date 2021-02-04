@@ -1,15 +1,17 @@
 import React from 'react';
 
-import {Text} from 'react-native';
+import Button from "../../components/Button/Button";
+import {Container} from "./ProfileScreen.style";
 
-
-const ProfileScreen = () => {
-
-
+const ProfileScreen = ({navigation}) => {
     return (
-        <>
-            <Text>Profile screen</Text>
-        </>
+        <Container>
+            <Button
+                active
+                title={'Show Match'}
+                onPress={() => navigation.navigate('MatchResults')}
+            />
+        </Container>
     )
 }
 
