@@ -3,7 +3,13 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import {Entypo, FontAwesome5, Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
+import {FontAwesome5, Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from "../screens/Home/HomeScreen";
+import BallScreen from "../screens/Ball/BallScreen";
+import ChatScreen from "../screens/Chat/ChatScreen";
+import GameScreen from "../screens/Game/GameScreen";
+import ProfileScreen from "../screens/Profile/ProfileScreen";
 
 import theme from "../constants/theme";
 
@@ -18,7 +24,7 @@ export const HomeNavigator = () => {
         <HomeStackNavigator.Navigator screenOptions={defaultNavOptions}>
             <HomeStackNavigator.Screen
                 name={'Home'}
-                component={Home}
+                component={HomeScreen}
                 // options={}
             />
         </HomeStackNavigator.Navigator>
@@ -31,7 +37,7 @@ export const ChatNavigator = () => {
         <ChatStackNavigator.Navigator screenOptions={defaultNavOptions}>
             <ChatStackNavigator.Screen
                 name={'Chat'}
-                component={Chat}
+                component={ChatScreen}
                 // options={}
             />
         </ChatStackNavigator.Navigator>
@@ -44,7 +50,7 @@ export const BallNavigator = () => {
         <BallStackNavigator.Navigator screenOptions={defaultNavOptions}>
             <BallStackNavigator.Screen
                 name={'Ball'}
-                component={Ball}
+                component={BallScreen}
                 // options={}
             />
         </BallStackNavigator.Navigator>
@@ -57,7 +63,7 @@ export const GameNavigator = () => {
         <GameStackNavigator.Navigator screenOptions={defaultNavOptions}>
             <GameStackNavigator.Screen
                 name={'Game'}
-                component={Game}
+                component={GameScreen}
                 // options={}
             />
         </GameStackNavigator.Navigator>
@@ -70,7 +76,7 @@ export const ProfileNavigator = () => {
         <ProfileStackNavigator.Navigator screenOptions={defaultNavOptions}>
             <ProfileStackNavigator.Screen
                 name={'Profile'}
-                component={Profile}
+                component={ProfileScreen}
                 // options={}
             />
         </ProfileStackNavigator.Navigator>
@@ -78,28 +84,31 @@ export const ProfileNavigator = () => {
 }
 
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 export const DrivingTabs = () => {
     return (
         <Tab.Navigator
             screenOptions={({ route }) => ({
-                tabBarIcon: ({ focused, color, size }) => {
+                tabBarIcon: ({color}) => {
                     if (route.name === 'Home') {
-                        return <Entypo name='Home' size={24} color={color} />
+                        return <MaterialCommunityIcons name="home" size={24} color={color} />
                     } else if (route.name === 'Chat') {
-                        return <Ionicons name="chatbubbles-outline" size={24} color={color} />
+                        return <Ionicons name="chatbubbles-outline" size={20} color={color} />
                     } else if (route.name === 'Ball') {
                         return <Ionicons name="ios-football" size={24} color={color} />
                     } else if (route.name === 'Game') {
                         return <MaterialCommunityIcons name="gamepad-variant" size={24} color={color} />
                     } else if (route.name === 'Profile') {
-                        return <FontAwesome5 name="user" size={24} color={color} />
+                        return <FontAwesome5 name="user" size={20} color={color} />
                     }
                 },
             })}
-            activeColor={theme.colors.green}
-            labeled={false}
+            tabBarOptions={{
+                activeTintColor: theme.colors.green,
+                inactiveTintColor: theme.colors.lightGray,
+                showLabel: false,
+            }}
         >
             <Tab.Screen
                 name="Home"
