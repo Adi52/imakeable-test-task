@@ -2,18 +2,19 @@ import styled from 'styled-components/native';
 import theme from '../../constants/theme';
 
 export const FeedbackNativeWrapper = styled.View`
-    height: 40px;
+    height: 35px;
     border-radius: 50px;
     overflow: hidden;
+    margin-right: 3px;
 `;
 
 const RootButton = styled.View`
-    height: 40px;
+    height: 100%;
     align-items: center;
     justify-content: center;
     margin-bottom: ${theme.spacing.sm}px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
 `;
 
 const RootText = styled.Text`

@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import theme from '../../constants/theme';
 import {BigTitle, SmallText} from "../../components/Text";
+import {Dimensions} from 'react-native';
 
 export const Container = styled.View`
     flex: 1;
@@ -50,4 +51,37 @@ export const Score = styled.View`
     width: 100%;
 `;
 
+export const TrainersContainer = styled.View`
+    height: 5%;
+    width: 80%;
+`;
 
+export const MenuContainer = styled.View`
+    flex-direction: row;
+    width: 90%;
+    margin-bottom: ${theme.spacing.sm}px;
+`;
+
+export const GalleryScrollView = styled.ScrollView`
+    width: 100%;
+`
+
+export const GalleryWrapper = styled.View`
+    width: 100%;
+    align-items: center;
+`;
+
+export const GalleryContainer = styled.View`
+    width: 90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+`;
+
+
+export const GalleryImage = styled.Image`
+    border-radius: ${theme.spacing.xs}px;
+    width: ${Dimensions.get('window').width * 0.28}px;
+    height: ${Dimensions.get('window').width * 0.28}px;
+    margin-bottom: ${theme.spacing.xs}px;
+`;

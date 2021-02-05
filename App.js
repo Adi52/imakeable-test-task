@@ -35,7 +35,7 @@ export default function App() {
         <>
             <AppNavigation/>
             {/*<StatusBar*/}
-            {/*    // setStatusBarTanslucent={true}*/}
+            {/*    barStyle = "dark-content" hidden = {false}*/}
             {/*/>*/}
         </>
     );

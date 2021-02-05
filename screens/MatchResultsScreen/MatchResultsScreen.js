@@ -1,18 +1,20 @@
 import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import {
-    Container,
-    MatchDetails, Score,
+    Container, GalleryContainer, GalleryImage, GalleryScrollView, GalleryWrapper,
+    MatchDetails, MenuContainer, Score,
     ScoreText,
     SemiText,
     TeamsContainer,
-    TitlesContainer
+    TitlesContainer, TrainersContainer
 } from "./MatchResultsScreen.style";
 import {Header} from "./MatchResultsScreen.style";
 import {BigTitle, SmallTitle} from "../../components/Text";
 import theme from "../../constants/theme";
 import TeamTile from "../../components/TeamTile/TeamTile";
 import GradientBar from "../../components/GradientBar/GradientBar";
+import Button from "../../components/Button/Button";
+import {ScrollView} from "react-native-web";
 
 
 const MatchResultScreen = () => {
@@ -52,6 +54,30 @@ const MatchResultScreen = () => {
                     color={'magenta'}
                 />
             </TeamsContainer>
+
+            <TrainersContainer>
+
+            </TrainersContainer>
+            <MenuContainer>
+                <Button active title={'Highlights'} onPress={() => {}} />
+                <Button title={'Summary'} onPress={() => {}} />
+                <Button title={'Stats'} onPress={() => {}} />
+            </MenuContainer>
+            <GalleryScrollView>
+                <GalleryWrapper>
+                    <GalleryContainer>
+                        <GalleryImage source={require('../../assets/footballGallery/1.jpg')} />
+                        <GalleryImage source={require('../../assets/footballGallery/2.jpg')} />
+                        <GalleryImage source={require('../../assets/footballGallery/3.jpg')} />
+                        <GalleryImage source={require('../../assets/footballGallery/4.jpg')} />
+                        <GalleryImage source={require('../../assets/footballGallery/5.jpg')} />
+                        <GalleryImage source={require('../../assets/footballGallery/6.jpg')} />
+                        <GalleryImage source={require('../../assets/footballGallery/7.jpg')} />
+                        <GalleryImage source={require('../../assets/footballGallery/8.jpg')} />
+                        <GalleryImage source={require('../../assets/footballGallery/9.jpg')} />
+                    </GalleryContainer>
+                </GalleryWrapper>
+            </GalleryScrollView>
         </Container>
     )
 }
