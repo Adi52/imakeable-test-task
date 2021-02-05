@@ -12,3 +12,9 @@ export const SmallTitle = styled(BigTitle)`
     font-size: ${theme.fontSize.small}px;
     text-transform: uppercase;
 `
+
+export const SmallText = styled.Text`
+    font-family: ${theme.font.regular};
+    font-size: ${theme.fontSize.small}px;
+    color: ${theme.colors.textBlack};
+`
