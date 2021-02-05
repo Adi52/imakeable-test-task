@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
 import theme from '../../constants/theme';
+import {Dimensions} from 'react-native';
 
 export const FeedbackNativeWrapper = styled.View`
-    height: 35px;
+    height: ${Dimensions.get('window').width > 340 ? 35 : 25}px;
     border-radius: 50px;
     overflow: hidden;
     margin-right: 3px;
@@ -13,13 +14,13 @@ const RootButton = styled.View`
     align-items: center;
     justify-content: center;
     margin-bottom: ${theme.spacing.sm}px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: ${Dimensions.get('window').width > 340 ? 10 : 6}px;
+    padding-right: ${Dimensions.get('window').width > 340 ? 10 : 6}px;
 `;
 
 const RootText = styled.Text`
     font-family: ${theme.font.semi};
-    font-size: ${theme.fontSize.normal - 3}px;
+    font-size: ${Dimensions.get('window').width > 340 ? theme.fontSize.normal-3 : theme.fontSize.small}px;
 `;
 
 export const PrimaryButton = styled(RootButton)`

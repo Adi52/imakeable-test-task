@@ -3,10 +3,21 @@ import theme from '../../constants/theme';
 import {BigTitle, SmallText} from "../../components/Text";
 import {Dimensions} from 'react-native';
 
+export const Wrapper = styled.View`
+    flex: 1;
+    
+`;
+
+export const ScrollViewWrapper = styled.ScrollView`
+    width: 100%;
+    flex: 1;
+`;
+
 export const Container = styled.View`
     flex: 1;
     justify-content: flex-start;
     align-items: center;
+    
 `;
 
 export const Header = styled.View`
@@ -81,22 +92,14 @@ export const MenuContainer = styled.View`
     margin-bottom: ${theme.spacing.sm}px;
 `;
 
-export const GalleryScrollView = styled.ScrollView`
-    width: 100%;
-`
-
-export const GalleryWrapper = styled.View`
-    width: 100%;
-    align-items: center;
-`;
-
 export const GalleryContainer = styled.View`
+    flex: 1;
     width: 90%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 100px;
 `;
-
 
 export const GalleryImage = styled.Image`
     border-radius: ${theme.spacing.xs/2}px;

@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import theme from "../constants/theme";
+import {Dimensions} from 'react-native';
 
 export const BigTitle = styled.Text`
     font-family: ${theme.font.bold};
-    font-size: ${theme.fontSize.big}px;
+    font-size: ${Dimensions.get('window').width > 340 ? theme.fontSize.big : theme.fontSize.normal}px;
     color: ${theme.colors.textWhite};
 `;
 

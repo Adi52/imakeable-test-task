@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {SmallText} from "../Text";
 import theme from "../../constants/theme";
+import {Dimensions} from "react-native";
 
 export const Wrapper = styled.View`
     align-items: flex-end;
@@ -23,11 +24,11 @@ export const Description = styled.View`
 `;
 
 export const NameText = styled(SmallText)`
-    font-size: ${theme.fontSize.normal-4}px;
+    font-size: ${Dimensions.get('window').width > 340 ? theme.fontSize.normal-4 : theme.fontSize.normal-6}px;
 `;
 
 export const RoleText = styled(SmallText)`
-    font-size: ${theme.fontSize.normal-4}px;
+    font-size: ${Dimensions.get('window').width > 340 ? theme.fontSize.normal-4 : theme.fontSize.normal-6}px;
     font-family: ${theme.font.semi};
 `;
 
@@ -56,6 +57,5 @@ export const Bar = styled.View`
 
 export const BarText = styled(SmallText)`
     color: ${props => props.barColor === 'green' ? theme.colors.green : theme.colors.magenta};
-    font-family: ${theme.font.semi};
-   
+    font-family: ${theme.font.semi}; 
 `;
