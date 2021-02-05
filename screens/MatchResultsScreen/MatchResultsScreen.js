@@ -1,7 +1,8 @@
 import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import {
-    Container, GalleryContainer, GalleryImage, GalleryScrollView, GalleryWrapper,
+    ArrowBack, BackButtonContainer,
+    Container, FeedbackNativeWrapper, GalleryContainer, GalleryImage, GalleryScrollView, GalleryWrapper,
     MatchDetails, MenuContainer, Score,
     ScoreText,
     SemiText,
@@ -14,10 +15,12 @@ import theme from "../../constants/theme";
 import TeamTile from "../../components/TeamTile/TeamTile";
 import GradientBar from "../../components/GradientBar/GradientBar";
 import Button from "../../components/Button/Button";
-import {ScrollView} from "react-native-web";
+import TrainerCard from "../../components/TrainerCard/TrainerCard";
+import { Ionicons } from '@expo/vector-icons';
+import {TouchableNativeFeedback} from 'react-native';
 
 
-const MatchResultScreen = () => {
+const MatchResultScreen = ({navigation}) => {
     return (
         <Container>
             <Header>
@@ -26,6 +29,13 @@ const MatchResultScreen = () => {
                     start={[0, -0.1]}
                     style={{height: '100%'}}
                 >
+                    <FeedbackNativeWrapper>
+                        <TouchableNativeFeedback onPress={() => navigation.goBack()}>
+                            <ArrowBack>
+                                <Ionicons name="chevron-back" size={24} color={theme.colors.textWhite} />
+                            </ArrowBack>
+                        </TouchableNativeFeedback>
+                    </FeedbackNativeWrapper>
                     <TitlesContainer>
                         <SmallTitle>Tuesday night fc</SmallTitle>
                         <BigTitle>Match Results</BigTitle>
@@ -54,9 +64,21 @@ const MatchResultScreen = () => {
                     color={'magenta'}
                 />
             </TeamsContainer>
-
             <TrainersContainer>
-
+                <TrainerCard
+                    imageSrc={require('../../assets/footballGallery/trainer1.jpg')}
+                    name={'Chris Mathew'}
+                    role={'Captain'}
+                    barText={'Fit'}
+                    barColor={'green'}
+                />
+                <TrainerCard
+                    imageSrc={require('../../assets/footballGallery/trainer2.jpg')}
+                    name={'Boris Gorero'}
+                    role={'Captain'}
+                    barText={'Injuried'}
+                    barColor={'magenta'}
+                />
             </TrainersContainer>
             <MenuContainer>
                 <Button active title={'Highlights'} onPress={() => {}} />
@@ -85,7 +107,7 @@ const MatchResultScreen = () => {
 
 export const screenOptions = navData => {
     return {
-        headerShown: false
+        headerShown: false,
     };
 };
 

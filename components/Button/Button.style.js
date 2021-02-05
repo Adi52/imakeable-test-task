@@ -19,7 +19,7 @@ const RootButton = styled.View`
 
 const RootText = styled.Text`
     font-family: ${theme.font.semi};
-    font-size: ${theme.fontSize.normal}px;
+    font-size: ${theme.fontSize.normal - 3}px;
 `;
 
 export const PrimaryButton = styled(RootButton)`

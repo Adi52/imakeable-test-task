@@ -13,7 +13,25 @@ export const Header = styled.View`
     width: 100%;
     height: 20%;
     background-color: ${theme.colors.green};
+`;
 
+export const FeedbackNativeWrapper = styled.View`
+    position: absolute;
+    left: 8%;
+    top: 10%;
+    border-radius: 50px;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const ArrowBack = styled.View`
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
 `;
 
 export const TitlesContainer = styled.View`
@@ -27,7 +45,6 @@ export const TeamsContainer = styled.View`
     flex-direction: row;
     justify-content: space-between;
     width: 80%;
-
 `;
 
 export const MatchDetails = styled.View`
@@ -52,8 +69,10 @@ export const Score = styled.View`
 `;
 
 export const TrainersContainer = styled.View`
-    height: 5%;
     width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+    transform: translateY(-30px);
 `;
 
 export const MenuContainer = styled.View`
@@ -80,7 +99,7 @@ export const GalleryContainer = styled.View`
 
 
 export const GalleryImage = styled.Image`
-    border-radius: ${theme.spacing.xs}px;
+    border-radius: ${theme.spacing.xs/2}px;
     width: ${Dimensions.get('window').width * 0.28}px;
     height: ${Dimensions.get('window').width * 0.28}px;
     margin-bottom: ${theme.spacing.xs}px;
